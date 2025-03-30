@@ -1,13 +1,10 @@
-// src/app/components/SearchResults.jsx
-
 "use client";
 import { useState } from "react";
-
 import renew from "../assets/renew.svg";
 
 const dateFormater = (timestamp) => {
   const ts = parseInt(timestamp);
-  const dateObj = new Date(ts * 1000); // Convert seconds to milliseconds
+  const dateObj = new Date(ts * 1000); 
   const options = {
     day: "2-digit",
     month: "short",
@@ -84,14 +81,14 @@ export default function SearchResults({ results }) {
             <tr
               key={result.id}
               className='border-none hover:bg-[#F4F4F4] transition-colors duration-300'>
-              {/* Mark Section */}
+              
               <td className='w-1/5 py-2 pl-5 rounded-tl-xl rounded-bl-xl'>
                 <div className='h-24 w-33 flex items-center justify-center rounded-lg img-shadow'>
-                  {/* Placeholder for logo */}
+                 
                   <span className=' '>No Image</span>
                 </div>
               </td>
-              {/* Details Section */}
+             
               <td className='w-1/3 px-4 py-2 pl-16'>
                 <h3 className='text-lg font-semibold'>
                   {result.mark_identification}
@@ -103,7 +100,7 @@ export default function SearchResults({ results }) {
                   {dateFormater(result.registration_date)}
                 </p>
               </td>
-              {/* Status Section */}
+              
               <td className='w-1/4 px-4 py-2'>
                 <div className='flex items-center'>
                   <span className='flex-1 leading-6 font-bold text-base'>
@@ -121,7 +118,7 @@ export default function SearchResults({ results }) {
                   <b>{dateFormater(result.status_date)}</b>
                 </p>
               </td>
-              {/* Class/Description Section */}
+              
               <td className='w-1/3 px-4 py-2'>
                 <p className='text-sm text-gray-700 line-clamp-2 '>
                   {result.mark_description.join(", ")}
@@ -134,10 +131,10 @@ export default function SearchResults({ results }) {
                       Class {code}
                     </span>
                   ))}
-                  {/* <DotsHorizontalIcon className='h-5 w-5 text-gray-500' /> */}
+                  
                 </div>
               </td>
-              {/* Actions Section */}
+              
               <td className='w-1/3 px-4 py-2 rounded-tr-xl rounded-br-xl'>
                 <div className='flex items-center space-x-4'>
                   <button

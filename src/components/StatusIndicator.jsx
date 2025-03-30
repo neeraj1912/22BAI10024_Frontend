@@ -6,7 +6,7 @@ export default function StatusIndicator({ status }) {
       </div>
     );
   }
-  // if (status === "error") return <p>Error occurred. Please try again.</p>;
+ 
   if (status === "no-results") return <p>No results found.</p>;
   return null;
 }

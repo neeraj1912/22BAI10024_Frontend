@@ -5,10 +5,8 @@ import search from "../assets/search.svg";
 export default function Filter({ allFilters, onFilter }) {
   const location = useLocation();
 
-  // Extract the query string
+ 
   const queryParams = new URLSearchParams(location.search);
-
-  // Get the value after 'q='
   const searchQuery = queryParams.get("q");
 
   console.log(searchQuery);
@@ -22,7 +20,6 @@ export default function Filter({ allFilters, onFilter }) {
     classes: [],
   });
 
-  // If filters are updated, call the onFilter function
   useEffect(() => {
     if (!searchQuery) {
       return;
@@ -60,12 +57,12 @@ export default function Filter({ allFilters, onFilter }) {
       });
     }
 
-    // Remove the trailing '&' if it exists
+   
     if (baseURL.endsWith("&")) {
       baseURL = baseURL.slice(0, -1);
     }
 
-    // Update the URL in the browser
+
     if (baseURL !== "search?q=") {
       window.history.pushState({}, "", baseURL);
       onFilter(filters);
@@ -150,7 +147,7 @@ export default function Filter({ allFilters, onFilter }) {
 
   return (
     <div className='filter-container p-4 border rounded-xl mr-14 -mt-14 flex-1 transition-all duration-500 rounded-l-2xl md:rounded-r-2xl block'>
-      {/* counties Select */}
+     
       <div className='mb-4 border rounded-xl p-4 flex gap-4 items-center'>
         <label className='block text-sm font-medium mb-2'>Country</label>
         <select
@@ -169,7 +166,7 @@ export default function Filter({ allFilters, onFilter }) {
           )}
         </select>
       </div>
-      {/* Status Select */}
+     
       <div className='mb-4 border rounded-xl p-4'>
         <label className='block text-sm font-medium mb-2'>Status</label>
         <div className='flex gap-3 flex-wrap'>
@@ -235,7 +232,7 @@ export default function Filter({ allFilters, onFilter }) {
           </button>
         </div>
       </div>
-      {/* Owners MultiSelect */}
+   
       <div className='mb-4 border rounded-xl p-4'>
         <label className='block text-sm font-medium mb-2'>Owners</label>
         {allFilters.owners.length > 4 && (
@@ -271,7 +268,7 @@ export default function Filter({ allFilters, onFilter }) {
           ))}
         </div>
       </div>
-      {/* Class Codes MultiSelect */}
+     
       <div className='mb-4 border rounded-xl p-4'>
         <label className='block text-sm font-medium mb-2'>Categories</label>
         {allFilters.classes.length > 4 && (
@@ -307,7 +304,7 @@ export default function Filter({ allFilters, onFilter }) {
           ))}
         </div>
       </div>
-      {/* Attorneys MultiSelect */}
+      
       <div className='mb-4 border rounded-xl p-4'>
         <label className='block text-sm font-medium mb-2'>Attorneys</label>
         {allFilters.attorneys.length > 4 && (
@@ -343,7 +340,7 @@ export default function Filter({ allFilters, onFilter }) {
           ))}
         </div>
       </div>
-      {/* Law Firms MultiSelect */}
+      
       <div className='mb-4 border rounded-xl p-4'>
         <label className='block text-sm font-medium mb-2'>Law Firms</label>
         {allFilters.law_firms.length > 4 && (

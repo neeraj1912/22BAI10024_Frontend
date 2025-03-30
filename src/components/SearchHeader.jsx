@@ -2,19 +2,18 @@ import React from "react";
 function generateCombinations(inp) {
   const maxCombinations = 5;
   const combinations = [];
-  const words = inp.split(" "); // Split the input into words
+  const words = inp.split(" ")
 
-  // Add each word with '*' at the end
+ 
   words.forEach((word) => {
     combinations.push(`${word}*`);
   });
 
-  // Add each word with '*' at the start
   words.forEach((word) => {
     combinations.push(`*${word}`);
   });
 
-  // Ensure no more than 5 combinations are returned
+
   return combinations.slice(0, maxCombinations);
 }
 const SearchHeader = ({ query, showFilters, setShowFilters, totalHits }) => {

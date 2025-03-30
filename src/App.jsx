@@ -16,10 +16,10 @@ export default function App() {
   const [status, setStatus] = useState("idle");
   const [results, setResults] = useState([]);
   const [showFilters, setShowFilters] = useState(true);
-  const [query, setQuery] = useState("nike"); // Default query set to 'nike'
+  const [query, setQuery] = useState("nike"); 
   const [totalHits, setTotalHits] = useState(0);
   const [payload, setPayload] = useState({
-    input_query: "nike", // Default query set to 'nike'
+    input_query: "nike", 
     input_query_type: "query",
     sort_by: "default",
     status: [],
@@ -47,11 +47,10 @@ export default function App() {
 
   const location = useLocation();
 
-  // Function to extract query params from URL
   const getQueryParams = (search) => {
     const params = new URLSearchParams(search);
     const filters = {
-      q: params.get("q") || "nike", // Default to 'nike' if no query
+      q: params.get("q") || "nike", 
       status: params.get("status") || "",
       owners: params.getAll("owners") || [],
       attorneys: params.getAll("attorneys") || [],
@@ -61,14 +60,13 @@ export default function App() {
     return filters;
   };
 
-  // Set filters from the URL when the component loads
   useEffect(() => {
     const filters = getQueryParams(location.search);
 
     setQuery(filters.q);
     const newPayload = {
       ...payload,
-      input_query: filters.q || "nike", // Default to 'nike'
+      input_query: filters.q || "nike", 
       input_query_type: filters.q ? "query" : "all",
       status: filters.status ? [filters.status] : [],
       owners: filters.owners,
