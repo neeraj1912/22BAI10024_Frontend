@@ -1,4 +1,4 @@
-# TradeMaria - Frontend Intern Task (VIT) - 21BBS0041
+# TradeMaria - Frontend Intern Task (VIT) - 22BAI10024
 
 ## Overview
 
@@ -19,31 +19,7 @@ Replicate our Trademarkia Search Page with the help of the link given below:
 
 - **Pagination**: Navigate through search results easily with pagination controls.
 
-## Demonstration
 
-![WORKFLOW](https://i.imgur.com/jopFDep.gif)
-
-### Demo Video (CLICK BELOW)
-
-[![WATCH VIDEO ON YOUTUBE](https://img.youtube.com/vi/4cZti03nvN8/0.jpg)](https://www.youtube.com/watch?v=4cZti03nvN8)
-
-## Screenshots
-
-## DEMO 1 SEARCH QUERY = "NIKE"
-
-![Screenshot 1](https://i.imgur.com/yXF5xEB.png)
-
-## DEMO 1 SEARCH QUERY = "MIKEY MOUSE"
-
-![Screenshot 2](https://i.imgur.com/0JuQ7Zj.png)
-
-## FILTER UI
-
-![Screenshot 1](https://i.imgur.com/4EuN9EP.png)
-
-## MULTIPLE FILTERS APPLIED
-
-![Screenshot 2](https://i.imgur.com/WBjvYTm.png)
 
 ## How to Run
 
