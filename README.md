@@ -1,5 +1,6 @@
 # TradeMaria - Frontend Intern Task (VIT) - 22BAI10024
 
+
 ## Overview
 
 Create a frontend application on ReactJS/NextJS which supports the following functionality
@@ -18,6 +19,15 @@ Replicate our Trademarkia Search Page with the help of the link given below:
 - **Loading Animation**: Enjoy a visually appealing loading animation while searching for trademarks.
 
 - **Pagination**: Navigate through search results easily with pagination controls.
+
+
+## DEMONSTATION ##
+
+Uploading trademarkiaVideo.mp4…
+
+
+![TRADEMARKimg](https://github.com/user-attachments/assets/0a4c3989-47c5-4fd3-b91c-a81d259bfed8)
+
 
 
 
