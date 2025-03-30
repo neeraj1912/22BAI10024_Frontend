@@ -1,4 +1,4 @@
-# TradeMaria - Frontend Intern Task (VIT) - 22BAI10024
+# TradeMarkia - Frontend Intern Task (VIT) - 22BAI10024
 
 
 ## Overview
