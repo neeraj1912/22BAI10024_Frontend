@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body {
+  font-family: "Gilroy-Regular", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gilroy-Bold", sans-serif !important;
+}
+.btn-primary-filter-selected {
+  background-color: #eef4ff;
+  color: #4380ec;
+  border: 0.8px solid #4380ec;
+  border-radius: 0.75rem;
+}
+.btn-primary-filter {
+  background-color: #fff;
+  color: #000;
+  border: 0.8px solid #e5e7eb;
+  border-radius: 0.75rem;
+}
+
+input[type="checkbox"] {
+  outline: none;
+  border: 1px solid #969696;
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  padding: 10px;
+}
+.img-shadow {
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(232, 232, 232, 0.25) 0px 4px 2px 0px,
+    rgba(232, 232, 232, 0.25) 0px 3.93525px 10px 0px,
+    rgba(153, 153, 153, 0.25) 0px 4.34295px 108.574px 0px;
+}
+/* src/app/components/StatusIndicator.css */
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #4380ec;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
