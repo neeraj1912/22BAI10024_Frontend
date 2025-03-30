@@ -16,11 +16,11 @@ export default function App() {
   const [status, setStatus] = useState("idle");
   const [results, setResults] = useState([]);
   const [showFilters, setShowFilters] = useState(true);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("nike"); // Default query set to 'nike'
   const [totalHits, setTotalHits] = useState(0);
   const [payload, setPayload] = useState({
-    input_query: "",
-    input_query_type: "",
+    input_query: "nike", // Default query set to 'nike'
+    input_query_type: "query",
     sort_by: "default",
     status: [],
     exact_match: false,
@@ -51,7 +51,7 @@ export default function App() {
   const getQueryParams = (search) => {
     const params = new URLSearchParams(search);
     const filters = {
-      q: params.get("q") || "",
+      q: params.get("q") || "nike", // Default to 'nike' if no query
       status: params.get("status") || "",
       owners: params.getAll("owners") || [],
       attorneys: params.getAll("attorneys") || [],
@@ -66,19 +66,10 @@ export default function App() {
     const filters = getQueryParams(location.search);
 
     setQuery(filters.q);
-    setPayload({
-      ...payload,
-      input_query: filters.q,
-      status: filters.status ? [filters.status] : [],
-      owners: filters.owners,
-      attorneys: filters.attorneys,
-      law_firms: filters.law_firms,
-      classes: filters.classes,
-    });
-
     const newPayload = {
       ...payload,
-      input_query: filters.q,
+      input_query: filters.q || "nike", // Default to 'nike'
+      input_query_type: filters.q ? "query" : "all",
       status: filters.status ? [filters.status] : [],
       owners: filters.owners,
       attorneys: filters.attorneys,
@@ -156,16 +147,13 @@ export default function App() {
 
   const handleSearch = async (q) => {
     setQuery(q);
-    setPayload({
-      ...payload,
-      input_query: q,
-    });
-
     const newPayload = {
       ...payload,
       input_query: q,
+      input_query_type: q ? "query" : "all",
     };
 
+    setPayload(newPayload);
     fetchData(newPayload);
   };
 
@@ -208,28 +196,29 @@ export default function App() {
             {results?.length > 0 && (
               <>
                 <SearchResults results={results} />
-                {/* PAGEITION */}
                 <div className='flex justify-center items-center mt-5 space-x-4'>
                   <button
                     className='bg-[#4380EC] text-white px-6 py-3 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-[#4380EC] hover:scale-105 active:bg-[#4380EC] disabled:bg-gray-400 disabled:cursor-not-allowed'
                     disabled={payload.page === 1}
                     onClick={() => {
+                      const updatedPage = payload.page - 1;
                       setPayload({
                         ...payload,
-                        page: payload.page - 1,
+                        page: updatedPage,
                       });
-                      fetchData(payload);
+                      fetchData({ ...payload, page: updatedPage });
                     }}>
                     Previous
                   </button>
                   <button
                     className='bg-[#4380EC] text-white px-6 py-3 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-[#4380EC] hover:scale-105 active:bg-[#4380EC]'
                     onClick={() => {
+                      const updatedPage = payload.page + 1;
                       setPayload({
                         ...payload,
-                        page: payload.page + 1,
+                        page: updatedPage,
                       });
-                      fetchData(payload);
+                      fetchData({ ...payload, page: updatedPage });
                     }}>
                     Next
                   </button>
